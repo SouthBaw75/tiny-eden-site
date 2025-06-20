@@ -56,6 +56,12 @@
     background-color: #688c66;
   }
   </style>
+  <script>
+    function confirmSubmission() {
+      alert('Thank you for your message! We’ll be in touch soon.');
+      return true;
+    }
+  </script>
 </head>
 <body class="contact-page">
 
@@ -83,7 +89,8 @@
         <p>We're here to help you grow something beautiful.</p>
       </div>
       <div class="form-container">
-        <form class="contact-form">
+        <form class="contact-form" name="contact" method="POST" data-netlify="true" onsubmit="return confirmSubmission()">
+          <input type="hidden" name="form-name" value="contact" />
           <div class="form-group">
             <label for="name">Your Name</label>
             <input type="text" id="name" name="name" placeholder="Enter your name" required>
